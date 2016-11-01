@@ -19,13 +19,13 @@ if [ ! -f $CACHE_FILE ]; then
   tar -zxvf hunspell-1.4.1.tar.gz | indent
 
   echo "-----> Building Hunspell"
-  cd hunspell
+  cd hunspell-1.4.1
   export CPPFLAGS="-I$INSTALL_DIR/include"
   export LDFLAGS="-L$INSTALL_DIR/lib"
   ./configure --prefix=$INSTALL_DIR
   make && make install
   cd ..
-  rm -rf hunspell
+  rm -rf hunspell-1.4.1
 
   # cache for future deploys
   echo "-----> Caching Hunspell installation"
